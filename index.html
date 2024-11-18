@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" />
+<title>鬼火涂装</title>
+<body>
+选择车漆<input id="q" type="color" value="#ff0000" onchange="draw()"/>长按保存图片提车
+<canvas id="c" width="1080" height="1080" style="background:#ffffff;width:100vw;height=100vw;">
+<canvas id="cc" width="1080" height="1080" style="display:none">
+
+<img id="p" style="display:none" src="paint.png" onload="draw()"/>
+<img id="b" style="display:none" src="bike.png" onload="draw()"/>
+
+<script>
+
+var c=document.getElementById("c");
+var cc=document.getElementById("cc");
+var ctx=c.getContext("2d");
+var cctx=cc.getContext("2d");
+var b=document.getElementById("b");
+var p=document.getElementById("p");
+var draw=function() {
+    if (b.complete && p.complete) {
+		cctx.globalCompositeOperation="copy"
+		cctx.drawImage(p,0,0)
+		cctx.globalCompositeOperation="source-in"
+		cctx.fillStyle = document.getElementById("q").value
+		cctx.fillRect(0, 0, 1080, 1080)
+		ctx.globalCompositeOperation="copy"
+		ctx.drawImage(b,0,0)
+		ctx.globalCompositeOperation="multiply"
+		ctx.drawImage(cc,0,0)
+		ctx.drawImage(p,0,0)
+		
+	}
+}
+
+</script>
+</body>
+</html>
