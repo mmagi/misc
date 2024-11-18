@@ -3,7 +3,34 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" />
 <title>鬼火涂装</title>
 <body>
-选择车漆<input id="q" type="color" value="#ff0000" onchange="draw()"/>
+<datalist id="cq">
+<option value="#ff0000"/>
+<option value="#ff4000"/>
+<option value="#ff8000"/>
+<option value="#ffbf00"/>
+<option value="#ffff00"/>
+<option value="#bfff00"/>
+<option value="#80ff00"/>
+<option value="#40ff00"/>
+<option value="#00ff00"/>
+<option value="#00ff40"/>
+<option value="#00ff80"/>
+<option value="#00ffbf"/>
+<option value="#00ffff"/>
+<option value="#00bfff"/>
+<option value="#007fff"/>
+<option value="#0040ff"/>
+<option value="#0000ff"/>
+<option value="#4000ff"/>
+<option value="#7f00ff"/>
+<option value="#bf00ff"/>
+<option value="#ff00ff"/>
+<option value="#ff00bf"/>
+<option value="#ff0080"/>
+<option value="#ff0040"/>
+<option value="#ff0000"/>
+</datalist>
+选择车漆<input id="q" type="color" value="#ff0000" list="cq" onchange="draw()"/>
 <button onclick="save()">提车</button>
 <canvas id="c" width="1080" height="1080" style="background:#ffffff;width:100vw;height=100vw;" ></canvas>
 <img id="out" hidden="true" style="background:#ffffff;width:100vw;height=100vw;"/>
